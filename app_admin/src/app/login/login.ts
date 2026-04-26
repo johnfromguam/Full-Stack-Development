@@ -41,7 +41,7 @@ export class Login {
   }
   
   private doLogin(): void {
-    let newUser = {
+    const newUser = {
       name: this.credentials.name,
       email: this.credentials.email
     } as User;

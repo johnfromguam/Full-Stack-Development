@@ -113,7 +113,7 @@ const tripsUpdateTrip = async(req, res) => {
             }
 
             // Uncomment the following line to show results of
-        operation
+            operation
             // on the console
             // console.log(q);
         };

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+// import { trips } from '../data/trips';
 import { TripCard } from '../trip-card/trip-card';
 
-import { TripData } from '../services/trip-data';
 import { Trip } from '../models/trip';
+import { TripData } from '../services/trip-data';
 
 import { Router } from '@angular/router';
 import { Authentication } from '../services/authentication';
@@ -18,6 +19,7 @@ import { Authentication } from '../services/authentication';
   providers: [TripData]
 })
 export class TripListing implements OnInit {
+  // trips: Array<any> = trips;
   trips!: Trip[];
   message: string = '';
 
@@ -50,7 +52,7 @@ export class TripListing implements OnInit {
     .subscribe({
       next: (value: any) => {
         this.trips = value;
-        if(value.length> 0)
+        if(value.length > 0)
         {
           this.message = 'There are ' + value.length + ' trips available.';
         }
@@ -69,5 +71,10 @@ export class TripListing implements OnInit {
 ngOnInit(): void {
   console.log('ngOnInit');
   this.getStuff();
-}
+  }
+
+  public isloggedIn()
+  {
+    return this.authentication.isLoggedIn();
+  }
 }

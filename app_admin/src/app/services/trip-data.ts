@@ -18,7 +18,7 @@ export class TripData {
     private http: HttpClient,
     @Inject(BROWSER_STORAGE) private storage: Storage
     ) {}
-    private url = 'http://localhost:3000/api';
+    private url = 'http://localhost:3000/api/trips';
   login(user: User, passwd: string): Observable<AuthResponse> {
     return this.handleAuthAPICall('login', user, passwd);
   }
